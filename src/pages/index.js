@@ -1,17 +1,12 @@
 import {
-  Container,
   Box,
   Heading,
   Text,
-  Spacer,
   Stack,
   Button,
 } from "@chakra-ui/react";
 import Router from "next/router";
-import Layout from "../components/layouts/mainBg";
 import config from "../helpers/config";
-import { getColor } from "@chakra-ui/theme-tools";
-import { theme } from "@chakra-ui/theme";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 

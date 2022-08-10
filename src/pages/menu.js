@@ -1,21 +1,14 @@
 import {
-  Container,
   Box,
   Heading,
-  Text,
-  Spacer,
   Stack,
   Tabs,
   TabList,
   TabPanels,
   Tab,
   TabPanel,
-  Flex,
-  Button,
 } from "@chakra-ui/react";
 import MenuItem from "../components/Menu/MenuItem";
-import config from "../helpers/config";
-import { GetStaticProps } from "next";
 import api from "./api";
 import groupBy from "lodash.groupby";
 import { useTranslation } from "next-i18next";

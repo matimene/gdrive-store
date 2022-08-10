@@ -18,7 +18,6 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import LinkItem from "./LinkItem";
 import ThemeToggleButton from "./ThemeToggleButton";
 import { getMenuItems } from "../../../helpers/menu-items";
-import config from "../../../helpers/config";
 import LocaleSwitcher from "./LangSwitcher";
 import { useTranslation } from "next-i18next";
 

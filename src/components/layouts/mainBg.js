@@ -20,7 +20,7 @@ const MainBg = ({ children, router }) => {
     }, 1500);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [currentIndex]);
 
   return (
     <>

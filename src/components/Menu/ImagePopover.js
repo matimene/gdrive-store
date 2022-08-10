@@ -2,7 +2,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverCloseButton,
   Image,
   useDisclosure,
   useOutsideClick,

@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { InfoIcon, StarIcon } from "@chakra-ui/icons";
 import ImagePopover from "./ImagePopover";
 

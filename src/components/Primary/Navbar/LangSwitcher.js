@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Button,
-  IconButton,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 

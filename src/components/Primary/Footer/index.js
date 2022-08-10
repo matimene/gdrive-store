@@ -1,25 +1,15 @@
-import NextLink from "next/link";
 import {
-  Link,
   Container,
   Box,
   Stack,
-  Heading,
   Flex,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuButton,
-  IconButton,
   useColorModeValue,
   Text,
 } from "@chakra-ui/react";
 import { PhoneIcon } from "@chakra-ui/icons";
-import { getMenuItems } from "../../../helpers/menu-items";
 import config from "../../../helpers/config";
 
 const Footer = (props) => {
-  const { path } = props;
 
   return (
     <Box
