@@ -1,0 +1,12 @@
+{
+  "MENU": {
+    "title": "Descubre nuestra carta"
+  },
+  "HOME": {
+    "menuButton": "Chequea nuestra carta"
+  },
+  "NAVBAR": {
+    "home": "Inicio",
+    "menu": "Nuestra carta"
+  }
+}

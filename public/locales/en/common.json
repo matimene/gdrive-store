@@ -1,0 +1,12 @@
+{
+  "MENU": {
+    "title": "Discover our menu"
+  },
+  "HOME": {
+    "menuButton": "Check our menu"
+  },
+  "NAVBAR": {
+    "home": "Home",
+    "menu": "Our menu"
+  }
+}
