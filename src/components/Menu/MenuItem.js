@@ -19,8 +19,8 @@ const MenuItem = ({ item, locale, isMarked, handleMarkItem }) => {
           </ImagePopover>
         ) : ''}
         <Flex cursor='pointer' onClick={() => handleMarkItem(item?.id, isMarked)} >
+          {item?.star && <StarIcon w={3} h={6} mr="6px" />}
           <Text fontSize={18} color={isMarked? 'primary': ''} >{item[`title_${locale}`]}</Text>
-          {item?.star && <StarIcon w={3} h={6} ml="6px" />}
         </Flex>
         <Text fontSize={15} opacity="0.7" width='100%'>
           {item[`description_${locale}`]}

@@ -13,11 +13,11 @@ const Footer = (props) => {
 
   return (
     <Box
-      position="absolute"
+      position="fixed"
       as="footer"
       w="full"
       bg={useColorModeValue("#ffffff40", "#20202380")}
-      style={{ bottom: 0, right: 0 }}
+      style={{ bottom: 0 }}
       zIndex={1}
       {...props}
     >

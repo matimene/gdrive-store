@@ -36,8 +36,8 @@ function CartPopover({ items, products, locale, handleMarkItem }) {
     >
       <PopoverTrigger>
         <Flex 
-          position='absolute'
-          bottom='100px'
+          position='fixed'
+          bottom='20px'
           right='20px'
           width='30px'
           height='30px'

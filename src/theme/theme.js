@@ -11,7 +11,7 @@ export default extendTheme({
         height: "100%",
       },
       body: {
-        // minHeight: "100vh",
+        minHeight: "100vh",
         // backgroundColor: "white",
         // color: "black",
         margin: 0,
