@@ -8,10 +8,11 @@ const { parsed: localEnv } = require("dotenv-safe").config({
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: false,
+  swcMinify: true,
   i18n,
   env: localEnv,
-  mode: "development",
+  ssr: true,
+  displayName: true
 };
 
 module.exports = nextConfig;
