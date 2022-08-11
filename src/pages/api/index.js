@@ -1,5 +1,7 @@
 import { getProducts } from "./products";
 
-export default {
+const API = {
   getProducts,
-};
+}
+
+export default API;

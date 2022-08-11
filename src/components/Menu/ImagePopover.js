@@ -38,7 +38,7 @@ function ImagePopover({ children, img }) {
         width={`${SIZE}px`}
         height={`${SIZE}px`}
       >
-        <Image boxSize={`${BOX_SIZE}px`} objectFit="cover" src={img} />
+        <Image boxSize={`${BOX_SIZE}px`} objectFit="cover" src={img} alt='product-image' />
       </PopoverContent>
     </Popover>
   );

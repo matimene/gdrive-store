@@ -1,8 +1,9 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { InfoIcon, StarIcon } from "@chakra-ui/icons";
+import { StarIcon } from "@chakra-ui/icons";
+import { Image } from '@chakra-ui/react'
 import ImagePopover from "./ImagePopover";
 
-const MenuItem = ({ item, locale }) => {
+const MenuItem = ({ item, locale, isMarked, handleMarkItem }) => {
   return (
     <Flex
       paddingY={"12px"}
@@ -11,22 +12,17 @@ const MenuItem = ({ item, locale }) => {
       align="center"
       minW="100%"
     >
-      <Box textAlign="start">
+      <Box textAlign="start" width='full'>
         {item?.img ? (
           <ImagePopover img={item?.img}>
-            <Flex cursor="pointer">
-              {item?.star && <StarIcon w={3} h={6} mr="6px" />}
-              <Text fontSize={18}>{item[`title_${locale}`]}</Text>
-              <InfoIcon ml="12px" w={3} h={6} />
-            </Flex>
+            <Image position='relative' zIndex={2} float='left' mr="6px" borderRadius='10px' width='80px' boxSize='80px' cursor="pointer" src={item?.img} alt={item[`title_${locale}`]} />
           </ImagePopover>
-        ) : (
-          <Flex>
-            {item?.star && <StarIcon w={3} h={6} mr="6px" />}
-            <Text fontSize={18}>{item[`title_${locale}`]}</Text>
-          </Flex>
-        )}
-        <Text fontSize={15} opacity="0.7">
+        ) : ''}
+        <Flex cursor='pointer' onClick={() => handleMarkItem(item?.id, isMarked)} >
+          <Text fontSize={18} color={isMarked? 'primary': ''} >{item[`title_${locale}`]}</Text>
+          {item?.star && <StarIcon w={3} h={6} ml="6px" />}
+        </Flex>
+        <Text fontSize={15} opacity="0.7" width='100%'>
           {item[`description_${locale}`]}
         </Text>
       </Box>

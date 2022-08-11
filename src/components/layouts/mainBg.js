@@ -17,7 +17,7 @@ const MainBg = ({ children, router }) => {
       } else {
         setCurrentIndex(currentIndex + 1);
       }
-    }, 1500);
+    }, 2500);
 
     return () => clearInterval(intervalId);
   }, [currentIndex]);

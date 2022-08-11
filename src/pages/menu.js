@@ -13,11 +13,18 @@ import api from "./api";
 import groupBy from "lodash.groupby";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useState } from "react";
+import CartPopover from "../components/Menu/CartPopover";
 
 const Menu = ({ products, locale }) => {
+  const [markedProducts, setMarkedProducts] = useState([])
   const { t } = useTranslation();
   const processedProducts = groupBy(products, `type_${locale}`);
   const menuSections = Object.keys(processedProducts);
+
+  const handleMarkItem = (id, isMarked) => {
+    isMarked ? setMarkedProducts(markedProducts.filter(itemId => itemId !== id)) : setMarkedProducts([...markedProducts, id])
+  }
 
   return (
     <Stack h="full" alignItems="center" direction="column">
@@ -26,11 +33,11 @@ const Menu = ({ products, locale }) => {
         alignItems="center"
         direction="column"
         textAlign="center"
-        paddingX={6}
+        paddingX={2}
         pt={4}
-        width="90%"
+        width="full"
       >
-        <Box>
+        <Box maxW='100%'>
           <Heading
             as="h3"
             fontSize={24}
@@ -41,19 +48,30 @@ const Menu = ({ products, locale }) => {
             {t("MENU.title")}
           </Heading>
         </Box>
-        <Box minW="full">
+        <Box maxW='100%' minW='90%'>
           <Tabs
-          // defaultIndex={1}
+            // defaultIndex={1}
           >
-            <TabList justifyContent="center">
+            <TabList
+              justifyContent={{ base: 'initial', md: 'center' }}
+              overflowY="hidden"
+              overflowX="visible"
+              sx={{
+                scrollbarWidth: 'none',
+                '::-webkit-scrollbar': {
+                  display: 'none',
+                },
+              }}
+            >
               {menuSections.map((item, i) => (
                 <Tab
                   _selected={{
                     color: "primary",
-                    borderBottom: "2px solid",
+                    borderTop: "2px solid",
                     fontWeight: "bold",
                   }}
                   key={item.id || `tab_${i}`}
+                  flexShrink={0}
                 >
                   {item?.name || item}
                 </Tab>
@@ -63,7 +81,13 @@ const Menu = ({ products, locale }) => {
               {menuSections.map((item, i) => (
                 <TabPanel key={`tabpanel_${i}`}>
                   {processedProducts[item].map((item) => (
-                    <MenuItem locale={locale} key={item.id} item={item} />
+                    <MenuItem 
+                      key={item.id} 
+                      item={item}
+                      locale={locale} 
+                      isMarked={markedProducts.indexOf(item?.id) !== -1}
+                      handleMarkItem={handleMarkItem} 
+                    />
                   ))}
                 </TabPanel>
               ))}
@@ -71,28 +95,7 @@ const Menu = ({ products, locale }) => {
           </Tabs>
         </Box>
       </Stack>
-      {/* <Box
-        paddingY="100px"
-        bgImage={`url('${config.bgImgUrl}')`}
-        bgPosition="center"
-        bgRepeat="no-repeat"
-        w="100%"
-        marginX="-16px"
-        textAlign="center"
-      >
-        <Heading as="h3" fontSize={28} variant="page-subtitle">
-          Book your table now!
-        </Heading>
-        <Flex justifyContent="center" mt="16px">
-          <Text>Call for an appointment &nbsp;</Text>
-          <Text textDecoration="underline" fontWeight="bold">
-            +34 674685241
-          </Text>
-        </Flex>
-        <Button mt="16px" size="lg">
-          Book now
-        </Button>
-      </Box> */}
+      {markedProducts?.length? <CartPopover handleMarkItem={handleMarkItem} items={markedProducts} products={products} locale={locale} /> : ''}
     </Stack>
   );
 };
