@@ -57,7 +57,15 @@ function CartPopover({ items, products, locale, handleMarkItem }) {
         maxH='350px'
         maxW='250px'
       >
-        <TableContainer overflowY='scroll'>
+        <TableContainer 
+          overflowY='scroll'
+          sx={{
+            scrollbarWidth: 'none',
+            '::-webkit-scrollbar': {
+              display: 'none',
+            },
+          }}
+        >
           <Table variant='striped' colorScheme='blackAlpha'>
             <Tbody>
               {items?.map(itemId => {
