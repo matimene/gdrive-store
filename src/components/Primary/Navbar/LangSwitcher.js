@@ -29,13 +29,13 @@ export default function LocaleSwitcher() {
           {otherLocales?.map((locale) => {
             const { pathname, query, asPath } = router;
             return (
-              <span key={"locale-" + locale}>
+              <div key={"locale-" + locale}>
                 <Link href={{ pathname, query }} as={asPath} locale={locale}>
                   <a>
                     {locale === "en" ? "EN" : locale === "es" ? "ESP" : null}
                   </a>
                 </Link>
-              </span>
+              </div>
             );
           })}
         </Button>
