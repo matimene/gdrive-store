@@ -10,7 +10,6 @@ export function getProducts() {
         Papa.parse(response.data, {
           header: true,
           complete: (results) => {
-            console.log(results);
             const products = results.data
               .map((item) => ({
                 ...item,
