@@ -86,20 +86,18 @@ const Navbar = (props) => {
                   (item) =>
                     !item.hidden && (
                       <NextLink key={item.key} href={item.path} passHref>
-                        <a>
-                          <MenuItem
-                            fontWeight="bold"
-                            letterSpacing="1px"
-                            textTransform="uppercase"
-                            as={Link}
-                            justifyContent="end"
-                          >
-                            {item.label}
-                          </MenuItem>
-                        </a>
+                        <MenuItem
+                          fontWeight="bold"
+                          letterSpacing="1px"
+                          textTransform="uppercase"
+                          as={Link}
+                          justifyContent="end"
+                        >
+                          {item.label}
+                        </MenuItem>
                       </NextLink>
                     )
-                )}
+                  )}
               </MenuList>
             </Menu>
           </Box>

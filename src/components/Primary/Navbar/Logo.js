@@ -1,5 +1,4 @@
 import NextLink from "next/link";
-import Image from "next/image";
 import { Text, useColorModeValue } from "@chakra-ui/react";
 import styled from "styled-components";
 import config from "../../../helpers/config";
@@ -21,8 +20,6 @@ const LogoBox = styled.span`
 `;
 
 const Logo = () => {
-  const logoImg = `/images/nav-logo${useColorModeValue("", "-dark")}.png`;
-
   return (
     <NextLink passHref href="/" scroll={false}>
       <a>
@@ -33,7 +30,6 @@ const Logo = () => {
             fontWeight="bold"
             ml={3}
           >
-            <Image src={logoImg} width={20} height={20} alt="logo" />
             {config.storeName}
           </Text>
         </LogoBox>
