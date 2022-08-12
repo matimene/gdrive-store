@@ -1,12 +1,9 @@
 import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { appWithTranslation } from "next-i18next";
-import dynamic from "next/dynamic";
 import theme from "../theme/theme";
 import Layout from "../components/layouts/main";
-//import LayoutBg from "../components/layouts/mainBg";
-
-const LayoutBg = dynamic(() => import("../components/layouts/mainBg"), { ssr: false});
+import LayoutBg from "../components/layouts/mainBg";
 
 const layouts = {
   Main: Layout,
