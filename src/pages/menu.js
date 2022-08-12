@@ -85,7 +85,7 @@ const Menu = ({ products, locale }) => {
                       key={item.id} 
                       item={item}
                       locale={locale} 
-                      isMarked={markedProducts.indexOf(item?.id) !== -1}
+                      isMarked={markedProducts?.indexOf(item?.id) !== -1 || false}
                       handleMarkItem={handleMarkItem} 
                     />
                   ))}
