@@ -3,6 +3,7 @@ import LayoutBg from "../components/layouts/mainBg";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme/theme";
 import { appWithTranslation } from "next-i18next";
+import React from "react";
 
 const layouts = {
   Main: Layout,
@@ -16,7 +17,9 @@ const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
       <Layout router={router}>
-        <Component {...pageProps} key={router.route} />
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Component {...pageProps} key={router.route} />
+        </React.Suspense>
       </Layout>
     </ChakraProvider>
   );
