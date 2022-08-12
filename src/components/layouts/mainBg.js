@@ -31,7 +31,7 @@ const MainBg = ({ children, router }) => {
         display="flex"
         flexDirection="column"
         bgColor="none"
-        bgImage={`linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${BG_IMAGES[currentIndex]}')`}
+        bgImage={`linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${BG_IMAGES[currentIndex]})`}
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"
