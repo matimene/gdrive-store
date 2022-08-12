@@ -4,7 +4,6 @@ import Navbar from "../Primary/Navbar";
 import config from "../../helpers/config";
 import { useEffect, useState } from "react";
 import Footer from "../Primary/Footer";
-import SafeHydrate from "../Primary/SafeHydrate";
 
 const BG_IMAGES = config.bgImages;
 
@@ -41,9 +40,7 @@ const MainBg = ({ children, router }) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>{config.storeTitle}</title>
         </Head>
-        <SafeHydrate>
-          <Navbar path={router.asPath} />
-        </SafeHydrate>
+        <Navbar path={router.asPath} />
         <Container h="100%" maxW="container.xl" pt="14">
           {children}
         </Container>
