@@ -34,8 +34,9 @@ function CartPopover({ items, products, locale, handleMarkItem }) {
       onOpen={onOpen}
       onClose={onClose}
     >
-      <PopoverTrigger>
+      <PopoverTrigger mt='0'>
         <Flex 
+          mt='0 !important'
           position='fixed'
           bottom='20px'
           right='20px'

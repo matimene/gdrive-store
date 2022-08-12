@@ -10,9 +10,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
-  env: localEnv,
-  ssr: true,
-  displayName: true
+  env: localEnv
 };
 
 module.exports = nextConfig;
