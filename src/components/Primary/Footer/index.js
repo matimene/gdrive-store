@@ -10,7 +10,6 @@ import { PhoneIcon } from "@chakra-ui/icons";
 import config from "../../../helpers/config";
 
 const Footer = (props) => {
-
   return (
     <Box
       position="fixed"
@@ -24,7 +23,7 @@ const Footer = (props) => {
       <Container
         display="flex"
         p={2}
-        pt={4}
+        pt={3}
         maxW="container.md"
         wrap="wrap"
         align="center"
@@ -45,7 +44,7 @@ const Footer = (props) => {
             </Text>
           </Flex>
           <Text fontSize={11}>
-            {config.storeTitle} Ecommerce © 2022
+            {config.storeTitle} Ecommerce © {new Date().getFullYear()}
           </Text>
         </Stack>
       </Container>

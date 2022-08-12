@@ -1,4 +1,4 @@
-export default {
+const CONFIG = {
   CSV_API_URL: process.env.CSV_API_URL,
   bgImages: [
     process.env.BG_IMAGE_1,
@@ -13,3 +13,5 @@ export default {
   storeHomeTitle: process.env.STORE_HOME_TITLE,
   storeHomeDescription: process.env.STORE_HOME_DESCRIPTION,
 };
+
+export default CONFIG;

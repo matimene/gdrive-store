@@ -28,7 +28,7 @@ const MenuItem = ({ item, locale, isMarked, handleMarkItem }) => {
       </Box>
       <Box pl="10px">
         <Text fontWeight={600} fontSize={18} color="primary">
-          ${item?.price}
+          €{item?.price}
         </Text>
       </Box>
     </Flex>
