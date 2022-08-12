@@ -17,7 +17,7 @@ import { useState } from "react";
 import CartPopover from "../components/Menu/CartPopover";
 
 const Menu = ({ products, locale }) => {
-  const [markedProducts, setMarkedProducts] = useState(typeof window === "undefiend" && [])
+  const [markedProducts, setMarkedProducts] = useState([])
   const { t } = useTranslation();
   const processedProducts = groupBy(products, `type_${locale}`);
   const menuSections = Object.keys(processedProducts);

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -30,9 +30,11 @@ export default function LocaleSwitcher() {
             const { pathname, query, asPath } = router;
             return (
               <span key={"locale-" + locale}>
-                <Link href={{ pathname, query }} as={asPath} locale={locale}>
-                  {locale === "en" ? "EN" : locale === "es" ? "ESP" : null}
-                </Link>
+                <NextLink passHref href={{ pathname, query }} as={asPath} locale={locale}>
+                  <a>
+                    {locale === "en" ? "EN" : locale === "es" ? "ESP" : null}
+                  </a>
+                </NextLink>
               </span>
             );
           })}
