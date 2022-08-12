@@ -12,7 +12,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Page = () => {
   const { t } = useTranslation();
-
   return (
     <Stack h="full" alignItems="center" direction="column">
       <Stack
