@@ -45,7 +45,7 @@ const Footer = (props) => {
             </Text>
           </Flex>
           <Text fontSize={11}>
-            {config.storeTitle} Ecommerce © {new Date().getFullYear()}
+            {config.storeTitle} Ecommerce © 2022
           </Text>
         </Stack>
       </Container>
