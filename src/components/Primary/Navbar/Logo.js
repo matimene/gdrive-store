@@ -25,19 +25,17 @@ const Logo = () => {
 
   return (
     <Link href="/" scroll={false}>
-      <a>
-        <LogoBox>
-          <Text
-            color={useColorModeValue("gray.800", "whiteAlpha.900")}
-            fontFamily='M PLUS Rounded 1c", sans-serif'
-            fontWeight="bold"
-            ml={3}
-          >
-            <Image src={logoImg} width={20} height={20} alt="logo" />
-            {config.storeName}
-          </Text>
-        </LogoBox>
-      </a>
+      <LogoBox>
+        <Text
+          color={useColorModeValue("gray.800", "whiteAlpha.900")}
+          fontFamily='M PLUS Rounded 1c", sans-serif'
+          fontWeight="bold"
+          ml={3}
+        >
+          <Image src={logoImg} width={20} height={20} alt="logo" />
+          {config.storeName}
+        </Text>
+      </LogoBox>
     </Link>
   );
 };

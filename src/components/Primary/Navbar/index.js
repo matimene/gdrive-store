@@ -61,9 +61,7 @@ const Navbar = (props) => {
             (item) =>
               !item.hidden && (
                 <LinkItem key={item.key} href={item.path} path={path}>
-                  <a>
-                    {item.label}
-                  </a>
+                  {item.label}
                 </LinkItem>
               )
           )}
