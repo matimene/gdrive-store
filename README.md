@@ -17,5 +17,4 @@ The whole idea of the project was to make an ecommerce with ZERO cost (made for 
 
 ## Screenshots
 
-![Home](public/images/home.png)
-![Menu](public/images/menu.png)
+![App screenshots](public/images/screenshots.png)
