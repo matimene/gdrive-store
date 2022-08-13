@@ -49,9 +49,7 @@ const Menu = ({ products, locale }) => {
           </Heading>
         </Box>
         <Box maxW='100%' minW='90%'>
-          <Tabs
-            // defaultIndex={1}
-          >
+          <Tabs variant='line'>
             <TabList
               justifyContent={{ base: 'initial', md: 'center' }}
               overflowY="hidden"
@@ -108,7 +106,6 @@ export const getStaticProps = async ({ locale }) => {
       products,
       locale,
     },
-    // revalidate: false, //chaching
   };
 };
 

@@ -16,7 +16,7 @@ const Footer = (props) => {
       as="footer"
       w="full"
       bg={useColorModeValue("#ffffff40", "#20202380")}
-      style={{ bottom: 0 }}
+      style={{ bottom: 0, backdropFilter: "blur(10px)" }}
       zIndex={1}
       {...props}
     >

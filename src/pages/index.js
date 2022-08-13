@@ -61,7 +61,7 @@ const Page = () => {
   );
 };
 
-Page.layout = "BG";
+Page.layout = "Home";
 
 export const getStaticProps = async ({ locale }) => {
   return {

@@ -3,11 +3,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { appWithTranslation } from "next-i18next";
 import theme from "../theme/theme";
 import Layout from "../components/layouts/main";
-import LayoutBg from "../components/layouts/mainBg";
+import LayoutHome from "../components/layouts/home";
 
 const layouts = {
   Main: Layout,
-  BG: LayoutBg,
+  Home: LayoutHome,
 };
 
 const Website = ({ Component, pageProps, router }) => {

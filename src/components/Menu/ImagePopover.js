@@ -5,6 +5,7 @@ import {
   Image,
   useDisclosure,
   useOutsideClick,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -32,9 +33,10 @@ function ImagePopover({ children, img }) {
       <PopoverTrigger>{children}</PopoverTrigger>
       <PopoverContent
         p={`${PADDING}px`}
-        color="white"
-        bg="blue.800"
-        borderColor="blue.800"
+        color={useColorModeValue("black", "white")}
+        bg={useColorModeValue("#ffffff40", "#20202380")}
+        borderColor={useColorModeValue("#ffffff40", "#20202380")}
+        style={{ backdropFilter: "blur(10px)" }}
         width={`${SIZE}px`}
         height={`${SIZE}px`}
       >

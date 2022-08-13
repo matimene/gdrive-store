@@ -28,7 +28,7 @@ function CartPopover({ items, products, locale, handleMarkItem }) {
   return (
     <Popover
       initialFocusRef={popoverRef}
-      placement="bottom-start"
+      placement="top-end"
       closeOnBlur={false}
       isOpen={isOpen}
       onOpen={onOpen}
@@ -55,19 +55,19 @@ function CartPopover({ items, products, locale, handleMarkItem }) {
         color={useColorModeValue("black", "white")}
         bg={useColorModeValue("#ffffff40", "#20202380")}
         style={{ backdropFilter: "blur(10px)" }}
-        maxH='350px'
+        maxH='75vh'
         maxW='250px'
       >
         <TableContainer 
           overflowY='scroll'
-          sx={{
-            scrollbarWidth: 'none',
-            '::-webkit-scrollbar': {
-              display: 'none',
-            },
-          }}
+          // sx={{
+          //   scrollbarWidth: 'none',
+          //   '::-webkit-scrollbar': {
+          //     display: 'none',
+          //   },
+          // }}
         >
-          <Table variant='striped' colorScheme='blackAlpha'>
+          <Table size='sm' variant='striped' colorScheme='blackAlpha'>
             <Tbody>
               {items?.map(itemId => {
                 return (

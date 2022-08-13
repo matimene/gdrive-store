@@ -2,25 +2,13 @@ import { Flex, Container } from "@chakra-ui/react";
 import Head from "next/head";
 import Navbar from "../Primary/Navbar";
 import config from "../../helpers/config";
-import { useEffect, useState } from "react";
 import Footer from "../Primary/Footer";
+import useIntervalImage from "../../helpers/hooks/useIntervalmage";
 
-const BG_IMAGES = config.bgImages;
+const BG_IMAGES = config.homeBgImages;
 
 const MainBg = ({ children, router }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (currentIndex === BG_IMAGES.length - 1) {
-        setCurrentIndex(0);
-      } else {
-        setCurrentIndex(currentIndex + 1);
-      }
-    }, 2500);
-
-    return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  const bgImage = useIntervalImage(BG_IMAGES, 2500);
 
   return (
     <>
@@ -30,8 +18,7 @@ const MainBg = ({ children, router }) => {
         pb={8}
         display="flex"
         flexDirection="column"
-        bgColor="none"
-        bgImage={`linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${BG_IMAGES[currentIndex]})`}
+        bgImage={`linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${bgImage})`}
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"
